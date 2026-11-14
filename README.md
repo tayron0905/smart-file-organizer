@@ -47,3 +47,19 @@ sudo apt install ./release/smart-file-organizer_1.0.0_amd64.deb
 ## Sicherheit
 
 Die Oberfläche erhält keinen direkten Dateisystemzugriff. Sie kommuniziert über eine begrenzte Electron-Preload-API mit dem Hauptprozess. Es gibt keine Anmeldung und keinen Cloud-Dienst.
+
+## CachyOS / Arch Linux installieren
+
+GitHub Actions erzeugt zusätzlich ein Pacman-Paket (`.pacman` oder `.pkg.tar.zst`). Lade im [erfolgreichen GitHub Actions Lauf](https://github.com/tayron0905/smart-file-organizer/actions) das Artefakt `smart-file-organizer-linux` herunter, entpacke es und installiere das Pacman-Paket:
+
+```bash
+sudo pacman -U ./smart-file-organizer-*.pacman
+```
+
+Falls der Paketname auf `.pkg.tar.zst` endet:
+
+```bash
+sudo pacman -U ./smart-file-organizer-*.pkg.tar.zst
+```
+
+Lokal lässt sich das Arch-Paket mit `npm run dist:pacman` bauen.

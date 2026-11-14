@@ -36,5 +36,7 @@ jobs:
           path: |
             release/*.AppImage
             release/*.deb
+            release/*.pacman
+            release/*.pkg.tar.zst
           if-no-files-found: error
           retention-days: 30
