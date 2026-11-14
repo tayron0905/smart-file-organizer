@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "description": "A local-first smart file organizer for Linux",
-  "homepage": "https://github.com/tayron/smart-file-organizer",
+  "homepage": "https://github.com/tayron0905/smart-file-organizer",
   "author": "Smart File Organizer contributors",
   "license": "MIT",
   "main": "electron/main.cjs",
