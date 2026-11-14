@@ -58,7 +58,14 @@
         "libnss3"
       ]
     },
-    "pacman": { "compression": "gz" }
+    "pacman": {
+      "compression": "gz",
+      "depends": [
+        "c-ares", "ffmpeg", "gtk3", "http-parser", "libevent", "libvpx", "libxslt",
+        "libxss", "minizip", "nss", "re2", "snappy", "libnotify", "libappindicator",
+        "alsa-lib", "libxtst", "xdg-utils", "at-spi2-core"
+      ]
+    }
   },
   "allowScripts": {
     "electron@33.4.11": true,
