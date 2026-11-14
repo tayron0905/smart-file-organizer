@@ -58,7 +58,7 @@
         "libnss3"
       ]
     },
-    "pacman": { "compression": "zstd" }
+    "pacman": { "compression": "gz" }
   },
   "allowScripts": {
     "electron@33.4.11": true,
