@@ -1,0 +1,64 @@
+{
+  "name": "smart-file-organizer",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A local-first smart file organizer for Linux",
+  "homepage": "https://github.com/tayron/smart-file-organizer",
+  "author": "Smart File Organizer contributors",
+  "license": "MIT",
+  "main": "electron/main.cjs",
+  "scripts": {
+    "dev": "concurrently -k \"vite --host 127.0.0.1\" \"wait-on http://127.0.0.1:5173 && electron .\"",
+    "start": "electron .",
+    "build": "vite build",
+    "dist:linux": "npm run build && electron-builder --linux AppImage deb",
+    "dist:appimage": "npm run build && electron-builder --linux AppImage",
+    "dist:deb": "npm run build && electron-builder --linux deb"
+  },
+  "dependencies": {
+    "lucide-react": "^0.468.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.4",
+    "concurrently": "^9.1.2",
+    "electron": "^33.2.1",
+    "electron-builder": "^25.1.8",
+    "vite": "^6.0.5",
+    "wait-on": "^8.0.1"
+  },
+  "build": {
+    "appId": "dev.smartfileorganizer.desktop",
+    "productName": "Smart File Organizer",
+    "directories": {
+      "output": "release",
+      "buildResources": "build"
+    },
+    "files": [
+      "dist/**/*",
+      "electron/**/*",
+      "package.json"
+    ],
+    "linux": {
+      "category": "Utility;FileTools",
+      "target": [
+        "AppImage",
+        "deb"
+      ],
+      "maintainer": "Smart File Organizer contributors",
+      "synopsis": "Organize files locally by type, date, or project",
+      "icon": "build/icon.png"
+    },
+    "deb": {
+      "depends": [
+        "libgtk-3-0",
+        "libnss3"
+      ]
+    }
+  },
+  "allowScripts": {
+    "electron@33.4.11": true,
+    "esbuild@0.25.12": true
+  }
+}
