@@ -11,9 +11,9 @@
     "dev": "concurrently -k \"vite --host 127.0.0.1\" \"wait-on http://127.0.0.1:5173 && electron .\"",
     "start": "electron .",
     "build": "vite build",
-    "dist:linux": "npm run build && electron-builder --linux AppImage deb",
-    "dist:appimage": "npm run build && electron-builder --linux AppImage",
-    "dist:deb": "npm run build && electron-builder --linux deb"
+    "dist:linux": "npm run build && electron-builder --publish never --linux AppImage deb",
+    "dist:appimage": "npm run build && electron-builder --publish never --linux AppImage",
+    "dist:deb": "npm run build && electron-builder --publish never --linux deb"
   },
   "dependencies": {
     "lucide-react": "^0.468.0",
