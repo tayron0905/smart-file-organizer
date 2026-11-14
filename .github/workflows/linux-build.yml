@@ -26,6 +26,11 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Install Pacman packaging tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install --yes libarchive-tools
+
       - name: Build Linux installers
         run: npm run dist:linux
 
